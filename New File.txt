@@ -1,0 +1,93 @@
+#include <windows.h>
+#include <GL/glut.h>
+
+void axes()
+{
+    glColor3ub(0, 0, 0);
+    glLineWidth(3);
+
+    glBegin(GL_LINES);
+        glVertex2f(-15,0);
+        glVertex2f(15,0);
+
+        glVertex2f(0,-10);
+        glVertex2f(0,10);
+    glEnd();
+}
+
+void square()
+{
+    glColor3ub(255,0,0);
+    glBegin(GL_QUADS);
+        glVertex2f(-6,4);
+        glVertex2f(-2,4);
+        glVertex2f(-2,1);
+        glVertex2f(-6,1);
+    glEnd();
+}
+
+void purpleTriangle()
+{
+    glColor3ub(115,50,150);
+    glBegin(GL_TRIANGLES);
+        glVertex2f(-5,-4);   // P
+        glVertex2f(-2,-2);   // N
+        glVertex2f(-2,-6);   // O
+    glEnd();
+}
+
+void yellowTriangle()
+{
+    glColor3ub(255,255,0);
+    glBegin(GL_TRIANGLES);
+        glVertex2f(2,-4);    // R
+        glVertex2f(6.5,-4);  // S
+        glVertex2f(4,-1);    // Q
+    glEnd();
+}
+
+void arrow()
+{
+  glColor3ub(0, 170, 70); // Green color
+
+    // 1. The Rectangular Tail
+    glBegin(GL_QUADS);
+        glVertex2f(2.0, 2.5);  // Bottom-left of tail
+        glVertex2f(4.0, 2.5);  // Bottom-right of tail
+        glVertex2f(4.0, 3.5);  // Top-right of tail
+        glVertex2f(2.0, 3.5);  // Top-left of tail
+    glEnd();
+
+    // 2. The Triangular Head
+    glBegin(GL_TRIANGLES);
+        glVertex2f(4.0, 1.0);  // Bottom corner of head
+        glVertex2f(7.0, 3.0);  // The sharp tip (pointed right)
+        glVertex2f(4.0, 5.0);  // Top corner of head
+    glEnd();
+}
+void display()
+{
+    glClearColor(1,1,1,1);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    axes();
+    square();
+    arrow();
+    purpleTriangle();
+    yellowTriangle();
+
+    glFlush();
+}
+
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+    glutInitWindowSize(900,600);
+    glutCreateWindow("Updated Coordinates");
+
+    gluOrtho2D(-15,15,-8,9);
+
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+}
