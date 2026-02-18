@@ -1,0 +1,77 @@
+# Print and Type casting
+print('Hello class','My lab 1')
+a = 5
+b = "Hello"
+c = 4.67
+print(a)
+print(x)
+print(b)
+print(c)
+print(type(a))
+print(type(b))
+print(type(c))
+d = a + c
+print(d) # implicit
+print(int(d)) # explicit
+
+
+
+
+#if else
+a = 10
+b = 10
+if(a>b):
+  print("A is the largest")
+elif(a==b):
+  print("Equal numbers")
+else:
+  print("B is the largest")
+
+# While
+a = 0
+while(a<5):
+  print(a)
+  a =a +1
+
+# for loop
+a = range(2,5) # range
+for i in a:
+  print(i)
+print(a)
+list = [12,24,122,5423,11]
+for i in list:
+  print(i)
+
+#operations
+a = 5
+c = 3
+b = 7.5
+print(a+b)
+print(a-b)
+print(a/b)
+print(a*b)
+print(a//c)
+print(a**c)
+print(a%c)
+
+# List
+#List(mutable- can be changed)- append(),copy(),insert(), remove(),len(list)
+	# max(list), min(list), sort()
+a = [2,3,13,12,42,5,100]
+c = ['Rakib', 'Sakib']
+print(a)
+a.append(7)
+print(a)
+a.insert(3,100)
+print(a)
+a.remove(100)
+print(a)
+print(len(a))
+print(max(a))
+print(min(a))
+a.sort()
+print(a)
+
+#Tupple
+b = (1,2,7,5,9)
+print(b)
